@@ -11,6 +11,19 @@ async function get(path) {
   return res.json()
 }
 
+async function post(path, body) {
+  const res = await fetch(path, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  })
+  if (!res.ok) {
+    const data = await res.json().catch(() => ({}))
+    throw new Error(data.message ?? `Erro ${res.status} ao enviar a pergunta`)
+  }
+  return res.json()
+}
+
 const enc = encodeURIComponent
 const snap = (path) => get(`${import.meta.env.BASE_URL}snapshot/${path}.json`)
 
@@ -22,6 +35,23 @@ function bundle(team) {
 }
 function notObserved(team, id) {
   return new Error(`A situação '${id}' não ocorreu para ${team}`)
+}
+// Sem servidor não há busca livre: só as perguntas pré-calculadas no snapshot têm resposta.
+function offline(question, suggestions) {
+  return {
+    question,
+    intent: 'OFFLINE',
+    title: 'Pergunta livre precisa do servidor',
+    paragraphs: [
+      'Esta versão do site é estática e só traz as respostas das perguntas sugeridas. ' +
+        'Para perguntar livremente, rode o backend (veja o README).',
+    ],
+    sections: [],
+    actions: [],
+    sources: [],
+    followUps: suggestions.map((s) => s.question).slice(0, 4),
+    tookMs: 0,
+  }
 }
 
 export const api = STATIC
@@ -40,6 +70,11 @@ export const api = STATIC
         return map ? all.filter((r) => r.map === map) : all
       },
       losses: async (team) => (await bundle(team)).losses,
+      suggestions: async (team, ref) => (await bundle(team)).assistant?.[ref]?.suggestions ?? [],
+      ask: async (team, ref, question) => {
+        const data = (await bundle(team)).assistant?.[ref]
+        return data?.answers?.[question.trim()] ?? offline(question, data?.suggestions ?? [])
+      },
     }
   : {
       health: () => get('/api/health/data'),
@@ -50,6 +85,8 @@ export const api = STATIC
       vod: (team, id, map) =>
         get(`/api/teams/${enc(team)}/situations/${enc(id)}/vod${map ? `?map=${enc(map)}` : ''}`),
       losses: (team) => get(`/api/teams/${enc(team)}/losses`),
+      suggestions: (team, ref) => get(`/api/teams/${enc(team)}/assistant/suggestions?benchmark=${ref}`),
+      ask: (team, ref, question) => post(`/api/teams/${enc(team)}/assistant`, { question, benchmark: ref }),
     }
 
 export const pct = (x, digits = 0) => `${(x * 100).toFixed(digits).replace('.', ',')}%`

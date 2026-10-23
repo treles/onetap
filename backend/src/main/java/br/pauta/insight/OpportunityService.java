@@ -95,7 +95,7 @@ public class OpportunityService {
     }
 
     /** Todos os itens (geral + por mapa) de um time, já com vereditos. */
-    List<PautaItem> items(String team, Benchmark benchmark) {
+    public List<PautaItem> items(String team, Benchmark benchmark) {
         Set<String> group = groups.teams(benchmark);
         List<PautaItem> items = new ArrayList<>();
         for (Situation s : engine.situations()) {

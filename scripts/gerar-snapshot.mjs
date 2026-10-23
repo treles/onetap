@@ -15,6 +15,32 @@ async function get(path) {
   if (!res.ok) throw new Error(`${res.status} em ${path}`)
   return res.json()
 }
+async function post(path, body) {
+  const res = await fetch(API + path, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  })
+  if (!res.ok) throw new Error(`${res.status} em ${path}`)
+  return res.json()
+}
+
+// Assistente: respostas das perguntas sugeridas e das perguntas seguintes que elas oferecem (até 2 níveis).
+async function assistant(t, ref) {
+  const suggestions = await get(`/api/teams/${t}/assistant/suggestions?benchmark=${ref}`)
+  const answers = {}
+  let queue = suggestions.map((s) => s.question)
+  for (let depth = 0; depth < 2 && queue.length; depth++) {
+    const next = []
+    for (const question of queue) {
+      if (answers[question]) continue
+      answers[question] = await post(`/api/teams/${t}/assistant`, { question, benchmark: ref })
+      next.push(...answers[question].followUps)
+    }
+    queue = next
+  }
+  return { suggestions, answers }
+}
 
 let files = 0
 let bytes = 0
@@ -36,9 +62,10 @@ await save('methodology', methodology)
 
 for (const { team } of teams) {
   const t = encodeURIComponent(team)
-  const bundle = { losses: await get(`/api/teams/${t}/losses`), report: {}, situations: {}, vod: {} }
+  const bundle = { losses: await get(`/api/teams/${t}/losses`), report: {}, situations: {}, vod: {}, assistant: {} }
   for (const ref of REFS) {
     bundle.report[ref] = await get(`/api/teams/${t}/report?benchmark=${ref}`)
+    bundle.assistant[ref] = await assistant(t, ref)
   }
   for (const s of methodology.situations) {
     try {

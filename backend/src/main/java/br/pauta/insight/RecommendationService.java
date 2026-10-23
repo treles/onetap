@@ -29,6 +29,11 @@ public class RecommendationService {
             Map.entry("low-buy-vs-full", "rounds de força e eco: empilhar um site e buscar abates de perto"),
             Map.entry("clutch", "situações de 1 contra vários: uso do tempo e isolamento de duelos"));
 
+    /** Sugestão de foco da situação, ou {@code null} se não houver. */
+    public static String focusFor(String situationId) {
+        return FOCUS.get(situationId);
+    }
+
     public record Recommendation(String headline, String focus, String strength, String itemId, int vodRounds) {
     }
 
