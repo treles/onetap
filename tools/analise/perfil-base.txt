@@ -1,0 +1,97 @@
+FILES 336
+FOLDERS {'Rush Series Esquenta 2': 26, 'Rush Series Esquenta': 29, 'Rush Series Inclusivo': 13, 'Univavá\\Classificatória 1': 55, 'Univavá\\Classificatória 2': 39, 'Univavá\\Classificatória 3': 43, 'Univavá\\Classificatória 4': 62, 'Univavá\\Fase de Grupos': 69}
+DUP matchId {}
+DUP by filename tuple {}
+filename parse failures []
+side mapping failures [] 0
+MAPS(filename) [('ascent', 86), ('lotus', 82), ('haven', 75), ('split', 36), ('sunset', 24), ('abyss', 13), ('summit', 10), ('breeze', 5), ('pearl', 3), ('fracture', 2)]
+MAPIDS [('/Game/Maps/Ascent/Ascent', 86), ('/Game/Maps/Jam/Jam', 82), ('/Game/Maps/Triad/Triad', 75), ('/Game/Maps/Bonsai/Bonsai', 36), ('/Game/Maps/Juliett/Juliett', 24), ('/Game/Maps/Infinity/Infinity', 13), ('/Game/Maps/Plummet/Plummet', 10), ('/Game/Maps/Foxtrot/Foxtrot', 5), ('/Game/Maps/Pitt/Pitt', 3), ('/Game/Maps/Canyon/Canyon', 2)]
+versions [('13.05', 109), ('13.02', 56), ('13.00', 55), ('13.01', 39), ('12.10', 29), ('12.11', 26), ('13.06', 22)]
+flows Counter({'CustomGame': 336})
+modes Counter({'BombGameMode.BombGameMode_C': 336})
+players/match Counter({10: 314, 11: 22}) observers 22 coaches/match Counter({0: 156, 1: 143, 2: 37})
+rounds total 6618 min/avg/max 13 19.696428571428573 36
+kill events 46753 player-match kill mismatches 344 / 3382
+econ rows 66180 missing weapon/econ 16
+roundResultCode Counter({'Elimination': 4597, 'Defuse': 1349, 'Detonate': 522, '': 150})
+roundResult Counter({'Eliminated': 4597, 'Bomb defused': 1349, 'Bomb detonated': 522, 'Round timer expired': 150})
+ceremony Counter({'CeremonyDefault': 4977, 'CeremonyFlawless': 544, 'CeremonyCloser': 484, 'CeremonyClutch': 247, 'CeremonyThrifty': 215, 'CeremonyTeamAce': 84, 'CeremonyAce': 67})
+plant sites Counter({'A': 2040, 'B': 1603, 'C': 1010})
+damage types (kills) Counter({'Weapon': 45121, 'Ability': 1238, 'Bomb': 327, 'Fall': 48, 'Melee': 15, 'Crush': 4})
+distinct agents 29 [('8e253930-4c05-31dd-1b6c-968525494517', 588), ('320b2a48-4d9b-a075-30f1-1f93a9b638fa', 391), ('eb93336a-449b-9c1b-0a54-a891f7921d69', 389), ('add6443a-41bd-e414-f6ad-e58d267f4e95', 329), ('bb2a4828-46eb-8cd1-e765-15848195d751', 211), ('dade69b4-4f5a-8528-247b-219e5a1facd6', 202), ('117ed9e3-49f3-6512-3ccf-0cada7e3823b', 188), ('f94c3b30-42be-e959-889c-5aa313dba261', 173), ('22697a3d-45bf-8dd7-4fec-84a9e28c69d7', 154), ('efba5359-4016-a1e5-7626-b1ae76895940', 140), ('1e58de9c-4950-5125-93e9-a0aee9f98746', 117), ('707eab51-4836-f488-046a-cda6bf494859', 111), ('6f2a04ca-43e0-be17-7f36-b3908627744d', 67), ('41fb69c1-4189-7b37-f117-bcaf1e96f1bf', 55), ('df1cb487-4902-002e-5c17-d28e83e78588', 51), ('7f94d92c-4234-0a36-9646-3a87eb8b5c89', 47), ('5f8d3a7f-467b-97f3-062c-13acf203c006', 31), ('569fdd95-4d10-43ab-ca70-79becc718b46', 28), (None, 22), ('601dbbe7-43ce-be57-2a40-4abd24953621', 21), ('95b78ed7-4637-86d9-7e41-71ba8c293152', 19), ('1dbf2edd-4729-0984-3115-daa5eed44993', 13), ('9f0d8ba9-4140-b941-57d3-a7ad57c6b417', 10), ('a3bfb853-43b2-7238-a4f1-ad90e9e46bcc', 10), ('b444168c-4e35-8076-db47-ef9bf368f384', 6), ('0e38b510-41a8-5780-5e8f-568b2a4f2d6c', 4), ('cc8b64c8-4b25-4ff9-6e7f-37b4da43d235', 2), ('e370fa57-4757-3604-3648-499e1f642d3f', 2), ('92eeef5d-43b5-1d4a-8d03-b3927a09034b', 1)]
+distinct kill weapons 29 [('9C82E19D-4575-0200-1A81-3EACF00CF872', 17428), ('EE8E8D15-496B-07AC-E5F6-8FAE5D4C7B1A', 11259), ('E336C6B8-418D-9340-D77F-7A9E4CFE0702', 3175), ('1BAA85B4-4C70-1284-64BB-6481DFC3BB4E', 2554), ('4ADE7FAA-4CF1-8376-95EF-39884480959B', 1643), ('29A0CFAB-485B-F5D5-779A-B59F85E204A8', 1632), ('A03B24D3-4319-996D-0F8C-94BBFBA1DFC7', 1611), ('AE3DE142-4D85-2547-DD26-4E90BED35CF7', 1127), ('410B2E0B-4CEB-1321-1727-20858F7F3477', 949), ('462080D1-4035-2937-7C09-27AA2A5C27A7', 919), ('Ultimate', 818), ('', 548), ('5F0AAF7A-4289-3998-D5FF-EB9A5CF7EF5C', 484), ('856D9A7E-4B06-DC37-15DC-9D809C37CB90', 481), ('F7E1B454-4AD4-1063-EC0A-159E56B58941', 453), ('63E6C2B6-4A8E-869C-3D4C-E38355226584', 396), ('C4883E50-4494-202C-3EC3-6B8A9284F00B', 237), ('Ability1', 222), ('95336AE4-45D4-1032-CFAF-6BAD01910607', 207), ('EC845BF4-4F79-DDDA-A3DA-0DB3774B2794', 143), ('Ability2', 129), ('910BE174-449B-C412-AB22-D0873436B21B', 70), ('42DA8CCC-40D5-AFFC-BEEC-15AA47B42EDA', 69), ('GrenadeAbility', 69), ('44D4E95C-4157-0037-81B2-17841BF2E8E3', 56)]
+distinct buy weapons 21
+armors [('822BCAB2-40A2-324E-C137-E09195AD7692', 40524), ('4DEC83D5-4902-9AB3-BED6-A7A390761157', 10799), ('', 10555), ('B1B9086D-41BD-A516-5D29-E3B34A6F1644', 4302)]
+null fields [('round.bombDefuser', 5269), ('round.defusePlayerLocations', 5269), ('round.bombPlanter', 1965), ('round.plantPlayerLocations', 1965), ('player.characterId', 22), ('player.stats', 22)]
+damage sample {'receiver': 'j3U5ADnxYwRo-3Krd6T80Tw0_hWhbWkAva_wTmKvyrjI63C_YlojRsYoruN_-_T-xfni6SaaI9hi8g', 'damage': 175, 'legshots': 0, 'bodyshots': 0, 'headshots': 2}
+distinct puuids 413 appear >=5 matches 244
+distinct team names 68
+  ufmt_turuna                         matches= 36 players= 6 tourn=['Rush Series Esquenta', 'Rush Series Esquenta 2', 'Univavá']
+  azure_bears_black                   matches= 33 players= 7 tourn=['Rush Series Esquenta', 'Rush Series Esquenta 2', 'Univavá']
+  azure_bears_golden                  matches= 32 players= 5 tourn=['Rush Series Esquenta', 'Rush Series Esquenta 2', 'Univavá']
+  ceub_octopus_vulgaris               matches= 30 players= 7 tourn=['Rush Series Esquenta', 'Univavá']
+  uscs_hawks                          matches= 25 players= 8 tourn=['Rush Series Esquenta', 'Rush Series Esquenta 2', 'Univavá']
+  totale_umc                          matches= 24 players= 6 tourn=['Rush Series Esquenta 2', 'Univavá']
+  fei_darkowls                        matches= 22 players=12 tourn=['Rush Series Esquenta', 'Univavá']
+  a2e_uff                             matches= 18 players= 9 tourn=['Rush Series Esquenta', 'Univavá']
+  caap_hellhounds                     matches= 18 players= 6 tourn=['Univavá']
+  ufu_saints                          matches= 18 players= 8 tourn=['Univavá']
+  ufpr_bbn                            matches= 17 players= 9 tourn=['Rush Series Esquenta', 'Univavá']
+  wolf_gaming                         matches= 16 players= 7 tourn=['Univavá']
+  inatel_legacy                       matches= 14 players= 8 tourn=['Rush Series Esquenta', 'Univavá']
+  minerva_thunders                    matches= 14 players= 8 tourn=['Univavá']
+  fei_whiteowls                       matches= 13 players=11 tourn=['Rush Series Esquenta', 'Univavá']
+  caap_auroras                        matches= 13 players= 7 tourn=['Rush Series Esquenta', 'Rush Series Inclusivo', 'Univavá']
+  axis_anteaters                      matches= 13 players= 6 tourn=['Univavá']
+  maua_blue                           matches= 13 players= 7 tourn=['Univavá']
+  octacore_python                     matches= 12 players= 7 tourn=['Rush Series Esquenta 2', 'Univavá']
+  unicamp_tritons_black               matches= 12 players= 9 tourn=['Rush Series Esquenta', 'Univavá']
+  pucc_cardinals                      matches= 12 players= 8 tourn=['Univavá']
+  green_owls_noctua                   matches= 12 players= 8 tourn=['Univavá']
+  furia_utfpr                         matches= 12 players= 5 tourn=['Univavá']
+  green_owls_jacurutu                 matches= 12 players= 5 tourn=['Univavá']
+  inatel                              matches= 11 players= 6 tourn=['Rush Series Esquenta 2', 'Univavá']
+  poli_plague                         matches= 11 players= 6 tourn=['Univavá']
+  macklogic_red                       matches= 11 players= 7 tourn=['Univavá']
+  caap_malditos                       matches= 11 players= 5 tourn=['Univavá']
+  usp_stars                           matches= 11 players= 6 tourn=['Univavá']
+  ceub_octopus                        matches=  9 players= 6 tourn=['Univavá']
+  inatel_gray                         matches=  8 players= 8 tourn=['Rush Series Esquenta 2', 'Rush Series Inclusivo', 'Univavá']
+  caap_momentum                       matches=  8 players= 6 tourn=['Univavá']
+  inatel_dois                         matches=  8 players= 6 tourn=['Univavá']
+  pucgo_sistematica                   matches=  8 players= 6 tourn=['Univavá']
+  macklogic_rainbow                   matches=  7 players= 8 tourn=['Rush Series Esquenta 2', 'Rush Series Inclusivo']
+  azure_bears_silver                  matches=  7 players= 6 tourn=['Univavá']
+  unifesp_erex                        matches=  7 players= 7 tourn=['Univavá']
+  ufmg_fenix_b                        matches=  7 players= 5 tourn=['Univavá']
+  liga_vulkanica                      matches=  7 players= 5 tourn=['Univavá']
+  fatec_pg                            matches=  6 players= 8 tourn=['Rush Series Esquenta 2', 'Univavá']
+  unicamp_tritons_red                 matches=  6 players= 5 tourn=['Rush Series Esquenta 2', 'Univavá']
+  octacore_javascript                 matches=  6 players= 6 tourn=['Rush Series Esquenta', 'Rush Series Esquenta 2', 'Univavá']
+  ufu_saints_auryn                    matches=  6 players= 6 tourn=['Rush Series Esquenta', 'Rush Series Inclusivo']
+  pucgo_sistematica_academy           matches=  6 players= 7 tourn=['Univavá']
+  ufg_eagles_blue                     matches=  5 players= 6 tourn=['Univavá']
+  macklogic_white                     matches=  5 players= 9 tourn=['Univavá']
+  fametro_berserkers                  matches=  5 players= 6 tourn=['Univavá']
+  panterao_gaming                     matches=  4 players= 5 tourn=['Rush Series Esquenta 2', 'Univavá']
+  ibmec_sharks                        matches=  4 players= 5 tourn=['Rush Series Esquenta 2']
+  ime_wolves_red                      matches=  4 players= 8 tourn=['Rush Series Esquenta', 'Univavá']
+  ufg_eagles                          matches=  4 players= 5 tourn=['Univavá']
+  gambiarra_ufg                       matches=  4 players= 5 tourn=['Univavá']
+  brutal_esports                      matches=  4 players= 5 tourn=['Univavá']
+  tigre_branco                        matches=  3 players= 6 tourn=['Rush Series Esquenta']
+  usp_stars_gc                        matches=  3 players= 5 tourn=['Rush Series Inclusivo']
+  azure_bears_white                   matches=  3 players= 5 tourn=['Rush Series Inclusivo']
+  axis_aura                           matches=  3 players= 5 tourn=['Univavá']
+  ufrj_minerva                        matches=  3 players= 5 tourn=['Univavá']
+  ufu_saints_trigons                  matches=  3 players= 5 tourn=['Univavá']
+  pucc_canaries                       matches=  2 players= 6 tourn=['Rush Series Inclusivo']
+  homem_passaro                       matches=  2 players= 5 tourn=['Univavá']
+  ufg_gc_eagles                       matches=  2 players= 6 tourn=['Univavá']
+  unirio_krakens                      matches=  2 players= 5 tourn=['Univavá']
+  gdu_ufpb                            matches=  1 players= 5 tourn=['Univavá']
+  rahnag                              matches=  1 players= 5 tourn=['Univavá']
+  sistematica_unievangelica           matches=  1 players= 5 tourn=['Univavá']
+  sheriff_iff                         matches=  1 players= 5 tourn=['Univavá']
+  nox_unievangelica                   matches=  1 players= 5 tourn=['Univavá']
+misc Counter({'player_stats_null': 22, 'null_stats_observer_True': 22})

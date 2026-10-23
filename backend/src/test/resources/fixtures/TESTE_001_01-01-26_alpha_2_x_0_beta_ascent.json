@@ -1,0 +1,45 @@
+{
+  "matchInfo": { "matchId": "fixture-1", "mapId": "/Game/Maps/Ascent/Ascent", "gameStartMillis": 0, "gameLengthMillis": 1000, "gameVersion": "release-13.05" },
+  "players": [
+    { "puuid": "r1", "gameName": "Red Um",   "tagLine": "t", "teamId": "Red",  "characterId": "a1", "isObserver": false, "stats": { "score": 1, "roundsPlayed": 2, "kills": 1, "deaths": 0, "assists": 1 } },
+    { "puuid": "r2", "gameName": "Red Dois", "tagLine": "t", "teamId": "Red",  "characterId": "a2", "isObserver": false, "stats": { "score": 1, "roundsPlayed": 2, "kills": 1, "deaths": 1, "assists": 0 } },
+    { "puuid": "b1", "gameName": "Blue Um",  "tagLine": "t", "teamId": "Blue", "characterId": "a3", "isObserver": false, "stats": { "score": 1, "roundsPlayed": 2, "kills": 0, "deaths": 2, "assists": 0 } },
+    { "puuid": "b2", "gameName": "Blue Dois","tagLine": "t", "teamId": "Blue", "characterId": "a4", "isObserver": false, "stats": { "score": 1, "roundsPlayed": 2, "kills": 0, "deaths": 1, "assists": 0 } },
+    { "puuid": "obs", "gameName": "Observador", "tagLine": "t", "teamId": "Neutral", "characterId": null, "isObserver": true, "stats": null }
+  ],
+  "teams": [
+    { "teamId": "Red",  "won": true,  "roundsPlayed": 2, "roundsWon": 2 },
+    { "teamId": "Blue", "won": false, "roundsPlayed": 2, "roundsWon": 0 }
+  ],
+  "roundResults": [
+    {
+      "roundNum": 0, "roundResult": "Bomb detonated", "roundCeremony": "CeremonyDefault",
+      "winningTeam": "Red", "winningTeamRole": "Attacker", "bombPlanter": "r1", "bombDefuser": null, "plantSite": "A",
+      "playerStats": [
+        { "puuid": "r1", "economy": { "loadoutValue": 800, "weapon": "w", "armor": "", "spent": 800, "remaining": 0 },
+          "damage": [ { "receiver": "b1", "damage": 150, "headshots": 1, "bodyshots": 1, "legshots": 0 } ],
+          "kills": [ { "timeSinceRoundStartMillis": 3000, "killer": "r1", "victim": "b1", "assistants": [],
+                       "finishingDamage": { "damageType": "Weapon", "damageItem": "w" } } ] },
+        { "puuid": "r2", "economy": { "loadoutValue": 800, "weapon": "w", "armor": "", "spent": 800, "remaining": 0 }, "damage": [], "kills": [] },
+        { "puuid": "b1", "economy": { "loadoutValue": 800, "weapon": "w", "armor": "", "spent": 800, "remaining": 0 }, "damage": [], "kills": [] },
+        { "puuid": "b2", "economy": { "loadoutValue": 800, "weapon": "w", "armor": "", "spent": 800, "remaining": 0 }, "damage": [],
+          "kills": [ { "timeSinceRoundStartMillis": 90000, "killer": "b2", "victim": "b2", "assistants": [],
+                       "finishingDamage": { "damageType": "Bomb", "damageItem": "" } } ] }
+      ]
+    },
+    {
+      "roundNum": 1, "roundResult": "Eliminated", "roundCeremony": "CeremonyDefault",
+      "winningTeam": "Red", "winningTeamRole": "Attacker", "bombPlanter": null, "bombDefuser": null, "plantSite": "",
+      "playerStats": [
+        { "puuid": "r1", "economy": { "loadoutValue": 4500, "weapon": "w", "armor": "x", "spent": 4500, "remaining": 0 }, "damage": [],
+          "kills": [ { "timeSinceRoundStartMillis": 2000, "killer": "r1", "victim": "r2", "assistants": [],
+                       "finishingDamage": { "damageType": "Weapon", "damageItem": "w" } } ] },
+        { "puuid": "r2", "economy": { "loadoutValue": 4500, "weapon": "w", "armor": "x", "spent": 4500, "remaining": 0 }, "damage": [],
+          "kills": [ { "timeSinceRoundStartMillis": 1000, "killer": "r2", "victim": "b1", "assistants": ["r1"],
+                       "finishingDamage": { "damageType": "Weapon", "damageItem": "w" } } ] },
+        { "puuid": "b1", "economy": { "loadoutValue": 900, "weapon": "w", "armor": "", "spent": 0, "remaining": 2000 }, "damage": [], "kills": [] },
+        { "puuid": "b2", "economy": { "loadoutValue": 900, "weapon": "w", "armor": "", "spent": 0, "remaining": 2000 }, "damage": [], "kills": [] }
+      ]
+    }
+  ]
+}

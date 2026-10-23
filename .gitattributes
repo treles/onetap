@@ -1,0 +1,7 @@
+* text=auto
+# Base de partidas: guardada byte a byte, sem conversão de fim de linha
+data/** -text
+mvnw text eol=lf
+*.sh text eol=lf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
