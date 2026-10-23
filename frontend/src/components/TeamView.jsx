@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { ChevronDown } from 'lucide-react'
 import { api, pct } from '../api.js'
+import { AssistantBubble } from './AssistantBubble.jsx'
 import { BestWorst } from './BestWorst.jsx'
 import { FocusSection } from './FocusSection.jsx'
 import { InfoTip } from './InfoTip.jsx'
@@ -196,6 +197,13 @@ export function TeamView({ teams, team, benchmark, onTeam, onBenchmark }) {
           )}
         </>
       )}
+
+      <AssistantBubble
+        team={team}
+        teamName={t?.displayName ?? report?.displayName ?? team}
+        benchmark={benchmark}
+        onOpenVod={openVod}
+      />
     </>
   )
 }

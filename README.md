@@ -29,6 +29,7 @@ A Liga Coach responde três perguntas, nesta ordem:
 ## O que a plataforma entrega
 
 - **Recomendação de treino:** a frase de coaching com o principal ponto de atenção, o foco sugerido e a quantidade de rounds para rever.
+- **Assistente tática da Killjoy:** responde sobre plano de treino, pontos fortes, mapas, derrotas e rounds para rever usando a análise local.
 - **Indicadores principais:** first blood convertido, pós-plant e retake, cada um com a diferença para a referência e o veredito.
 - **Comparativo equipe × referência** nas seis situações centrais (first blood, pós-plant, retake, pistol, ataque e defesa).
 - **Melhores e piores desempenhos**, só com o que tem evidência estatística.
@@ -135,9 +136,9 @@ data/**/*.json → MatchFileName (nome do time vem do nome do arquivo)
 A base de partidas já vem no repositório, em `data/`. Não há download nem preparo de dados.
 
 ```bash
-git clone https://github.com/treles/vavahackton.git
-cd vavahackton/backend && ./mvnw spring-boot:run      # terminal 1: API em http://localhost:8080
-cd vavahackton/frontend && npm install && npm run dev  # terminal 2: tela em http://localhost:5173
+git clone https://github.com/treles/onetap.git
+cd onetap/backend && ./mvnw spring-boot:run      # terminal 1: API em http://localhost:8080
+cd onetap/frontend && npm install && npm run dev  # terminal 2: tela em http://localhost:5173
 ```
 
 No Windows (PowerShell), use `.\mvnw.cmd spring-boot:run` no lugar de `./mvnw spring-boot:run`.

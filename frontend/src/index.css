@@ -76,3 +76,67 @@ button.insight-row{border-top:0;border-right:0;border-bottom:0}
 .info-tip:hover .info-tip-box,.info-tip:focus-within .info-tip-box{display:block;animation:tip-in .15s ease-out both}
 @keyframes tip-in{from{opacity:0;transform:translateY(-3px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+/* Assistente do treinador: balão fixo no canto, respostas montadas só com os dados da análise */
+.assistant-panel{position:fixed;right:24px;bottom:96px;z-index:40;display:grid;grid-template-rows:auto 1fr auto;width:min(430px,calc(100vw - 32px));height:min(640px,calc(100vh - 132px));background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--accent);box-shadow:0 24px 60px rgba(0,0,0,.45);animation:tip-in .15s ease-out both}
+.assistant-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.assistant-header strong{display:block;font-family:Impact,'Arial Narrow',Arial,sans-serif;font-size:22px;font-weight:400;letter-spacing:.02em;text-transform:uppercase}
+.assistant-header small{display:block;margin-top:3px;color:var(--muted);font-size:12px}
+.assistant-close{display:grid;place-items:center;width:30px;height:30px;padding:0;border:1px solid var(--line);background:transparent;color:var(--muted)}
+.assistant-close:hover{color:var(--accent);border-color:var(--accent)}
+.assistant-log{position:relative;overflow-y:auto;padding:16px;display:grid;align-content:start;gap:14px;font-size:14px;line-height:1.5}
+.assistant-intro p{margin:0 0 10px;color:var(--muted)}
+.assistant-chips{display:flex;flex-wrap:wrap;gap:6px}
+.assistant-chips button{padding:6px 10px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);font-size:12px;font-weight:700;text-align:left;transition:border-color .15s ease,color .15s ease}
+.assistant-chips button:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+.assistant-chips button:disabled{opacity:.5;cursor:default}
+.assistant-chips.follow{margin-top:12px}
+.assistant-user{justify-self:end;max-width:85%;margin:0;padding:8px 12px;background:var(--accent);color:#17090c;font-weight:700}
+.assistant-error{margin:0;padding:10px 12px;border-left:3px solid var(--amber);background:var(--surface-2);color:var(--amber)}
+.assistant-wait{margin:0;color:var(--muted);font-size:13px}
+.assistant-answer{padding:12px 14px;border-left:3px solid var(--accent);background:var(--surface-2)}
+.assistant-answer h3{margin:0 0 8px;font-size:16px;line-height:1.25}
+.assistant-answer p{margin:0 0 8px}
+.assistant-section{margin-top:12px;padding-top:10px;border-top:1px solid var(--line)}
+.assistant-section h4{margin:0 0 6px;font-size:13px;color:var(--accent)}
+.assistant-section ul{margin:0;padding-left:18px;display:grid;gap:5px}
+.assistant-vod{display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:0;border:0;background:none;color:var(--accent);font-size:12px;font-weight:900}
+.assistant-vod:hover{text-decoration:underline}
+.assistant-sources{margin-top:12px;color:var(--muted);font-size:12px}
+.assistant-sources summary{cursor:pointer}
+.assistant-sources ul{margin:6px 0 0;padding-left:16px;display:grid;gap:3px}
+.assistant-sources li span{color:var(--ink);font-weight:700}
+.assistant-form{display:grid;grid-template-columns:1fr auto;border-top:1px solid var(--line)}
+.assistant-form input{min-width:0;padding:14px 16px;border:0;background:transparent;color:var(--ink);font-size:14px}
+.assistant-form input:focus-visible{outline:none;box-shadow:inset 0 -2px 0 var(--accent)}
+.assistant-form button{display:grid;place-items:center;width:52px;border:0;background:var(--accent);color:#17090c}
+.assistant-form button:disabled{background:var(--surface-2);color:var(--muted);cursor:default}
+@media(max-width:500px){.assistant-panel{right:8px;left:8px;bottom:92px;width:auto;height:calc(100vh - 110px)}}
+/* Persona Killjoy: avatar em monograma (sem arte oficial) e falas separadas dos dados */
+.assistant-header{justify-content:flex-start}.assistant-header>div{flex:1}
+.assistant-avatar{display:grid;place-items:center;flex:none;width:44px;height:44px;background:#17191f;border:1px solid #f2d23c;clip-path:polygon(0 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%)}
+.assistant-voice{margin:0 0 10px;padding-left:10px;border-left:2px solid #f2d23c;color:var(--ink);font-style:italic}
+.assistant-voice.closer{margin:12px 0 0}
+.assistant-intro .assistant-voice{margin-bottom:12px}
+.assistant-disclaimer{margin:4px 0 0;color:var(--muted);font-size:11px}
+.app:not(.dark) .assistant-voice{border-left-color:#b8960a}
+/* Botão do balão = torreta da Killjoy (desenho próprio), com balãozinho de fala ao lado.
+   Sensor pisca com o balão fechado; ao abrir, fica vermelho e o cano recua. */
+.assistant-dock{position:fixed;right:20px;bottom:16px;z-index:40;display:flex;align-items:flex-end;gap:10px}
+.assistant-turret{display:grid;place-items:center;padding:0;border:0;background:none;filter:drop-shadow(0 8px 14px rgba(0,0,0,.55))}
+.assistant-turret:hover .turret-head{transform:rotate(-8deg)}
+.assistant-turret:focus-visible{outline:2px solid #f2d23c;outline-offset:4px}
+.assistant-hint{position:relative;max-width:190px;margin-bottom:34px;padding:9px 12px;border:1px solid #f2d23c;background:#17191f;color:#f2eee8;font-size:12px;line-height:1.35;text-align:left;box-shadow:0 10px 24px rgba(0,0,0,.35);transition:transform .15s ease}
+.assistant-hint strong{display:block;color:#f2d23c;font-family:Impact,'Arial Narrow',Arial,sans-serif;font-size:15px;font-weight:400;letter-spacing:.04em;text-transform:uppercase}
+.assistant-hint::after{content:'';position:absolute;right:-8px;bottom:12px;border:8px solid transparent;border-right:0;border-left-color:#f2d23c}
+.assistant-hint:hover{transform:translateY(-2px)}
+@media(max-width:500px){.assistant-dock{right:10px;bottom:10px}.assistant-hint{max-width:150px;font-size:11px}}
+.turret-head{transform-origin:24px 28px;transition:transform .2s ease}
+.turret-barrel{transition:transform .2s ease}
+.turret.alert .turret-barrel{transform:translateX(-3px)}
+.turret-eye{fill:#31d7b0}
+.turret.alert .turret-eye{fill:#ff4655}
+@media (prefers-reduced-motion: no-preference){.assistant-turret:not(.is-open) .turret-eye{animation:turret-scan 2.4s ease-in-out infinite}}
+@keyframes turret-scan{0%,100%{opacity:1}50%{opacity:.25}}
+/* Barra de rolagem do chat da Killjoy em amarelo */
+.assistant-log{scrollbar-width:thin;scrollbar-color:#f2d23c transparent}
+.app:not(.dark) .assistant-log{scrollbar-color:#b8960a transparent}

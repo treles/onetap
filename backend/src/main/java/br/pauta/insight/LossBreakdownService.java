@@ -20,21 +20,28 @@ import java.util.Map;
 public class LossBreakdownService {
 
     public enum Category {
-        PISTOL("Pistol perdido"),
-        LOW_BUY("Compra baixa contra compra alta"),
-        POST_PLANT("Ataque: plantou e perdeu"),
-        ATTACK_NO_PLANT("Ataque: não conseguiu plantar"),
-        RETAKE("Defesa: spike plantada (retake perdido)"),
-        DEFENSE_NO_PLANT("Defesa: eliminada antes do plant");
+        PISTOL("Pistol perdido", "pistol"),
+        LOW_BUY("Compra baixa contra compra alta", "low-buy-vs-full"),
+        POST_PLANT("Ataque: plantou e perdeu", "post-plant"),
+        ATTACK_NO_PLANT("Ataque: não conseguiu plantar", "attack-plant-rate"),
+        RETAKE("Defesa: spike plantada (retake perdido)", "retake"),
+        DEFENSE_NO_PLANT("Defesa: eliminada antes do plant", "defense");
 
         private final String label;
+        private final String situationId;
 
-        Category(String label) {
+        Category(String label, String situationId) {
             this.label = label;
+            this.situationId = situationId;
         }
 
         public String label() {
             return label;
+        }
+
+        /** Situação da Pauta que corresponde à categoria (para abrir a fila de VOD certa). */
+        public String situationId() {
+            return situationId;
         }
 
         static Category of(Round r, Side side) {

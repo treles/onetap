@@ -7,6 +7,7 @@ import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -32,6 +33,16 @@ class ApiTest {
                 .andExpect(jsonPath("$.code").value("TEAM_NOT_FOUND"))
                 .andExpect(jsonPath("$.message").exists())
                 .andExpect(jsonPath("$.timestamp").exists());
+    }
+
+    @Test
+    void corpoMalformadoNoAssistenteDa400() throws Exception {
+        mvc.perform(post("/api/teams/qualquer/assistant").contentType("application/json").content("{question:"))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.code").value("INVALID_BODY"));
+        mvc.perform(post("/api/teams/qualquer/assistant").content("plano"))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.code").value("INVALID_BODY"));
     }
 
     @Test
